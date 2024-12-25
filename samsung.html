@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaylah Chatroom - Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://files.catbox.moe/vfvu91.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            animation: fadeBackground 10s infinite alternate ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        @keyframes fadeBackground {
+            0% {
+                filter: brightness(0.8);
+            }
+            100% {
+                filter: brightness(1);
+            }
+        }
+
+        .login-container {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .login-container h1 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background: #0078d7;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background: #005bb5;
+        }
+
+        .whatsapp-button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: white;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        .whatsapp-button img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>🔥Kaylah Chatroom🔥</h1>
+        <h2>Enter your name</h2>
+        <form onsubmit="login(event)">
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <button type="submit">Login</button>
+        </form>
+        <a href="https://whatsapp.com/channel/0029VacQFw65Ui2gGv0Kwk1r" class="whatsapp-button" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            Join Our Channel
+        </a>
+    </div>
+
+    <script>
+        function login(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            if (username) {
+                localStorage.setItem('username', username); // Save username in localStorage
+                window.location.href = 'chatroom.html'; // Redirect to chatroom
+            } else {
+                alert('Please enter a username!');
+            }
+        }
+    </script>
+</body>
+</html>
